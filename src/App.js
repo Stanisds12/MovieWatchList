@@ -8,7 +8,7 @@ import Watched from './components/Watched';
 import WatchList from './components/WatchList';
 
 import { GlobalProvider } from './context/GlobalState';
-import Footer from './components/Footer';
+
 
 function App() {
   return (
@@ -21,7 +21,6 @@ function App() {
         <Route path="/watched" component={Watched} />
         <Route path="/add" component={Add} />
       </Switch>
-      <Footer/>
         </Router>
       </GlobalProvider>
       
