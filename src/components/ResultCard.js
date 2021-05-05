@@ -1,9 +1,9 @@
 import React, { useContext} from "react";
-import Moment from "react-moment";
+//import Moment from "react-moment";
 import { GlobalContext } from "../context/GlobalState";
 
 export const ResultCard = ({ movie }) => {
-  const {
+ const {
     addMovieToWatchlist,
     addMovieToWatched,
     watchlist,
@@ -34,7 +34,8 @@ export const ResultCard = ({ movie }) => {
         <div className="header">
           <h3 className="title">{movie.title}</h3>
           <h4 className="release-date">
-            <Moment format="YYYY">{movie.release_date}</Moment>
+            {movie.release_date ? movie.release_date.substring(0,4): "-"}
+            
           </h4>
         </div>
 
@@ -44,7 +45,7 @@ export const ResultCard = ({ movie }) => {
             disabled={watchlistDisabled}
             onClick={() => addMovieToWatchlist(movie)}
           >
-            Add to Watchlist
+            Quiero Ver
           </button>
 
           <button
@@ -52,7 +53,7 @@ export const ResultCard = ({ movie }) => {
             disabled={watchedDisabled}
             onClick={() => addMovieToWatched(movie)}
           >
-            Add to Watched
+            He Visto
           </button>
         </div>
       </div>

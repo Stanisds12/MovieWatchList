@@ -8,9 +8,10 @@ const Add = () => {
     const [results, setResults] = useState("");
     const onChange = e => {
         e.preventDefault();
+        setChave(key);
         setQuery(e.target.value)
         fetch(
-            `https://api.themoviedb.org/3/search/movie?api_key=${chave.key}&language=es-ES&page=1&include_adult=false&query=${e.target.value}`
+            `https://api.themoviedb.org/3/search/movie?api_key=${chave.key}&language=pt-PT&page=1&include_adult=false&query=${e.target.value}`
         )
             .then((res) => res.json())
             .then((data) => {
@@ -20,7 +21,6 @@ const Add = () => {
                     setResults([]);
                 }
             });
-   
     }
     return (
         <div className="add-page">

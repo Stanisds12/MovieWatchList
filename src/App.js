@@ -7,18 +7,23 @@ import Header from './components/Header';
 import Watched from './components/Watched';
 import WatchList from './components/WatchList';
 
+import { GlobalProvider } from './context/GlobalState';
+import Footer from './components/Footer';
+
 function App() {
   return (
     <Fragment>
+      <GlobalProvider>
       <Router>
       <Header/>
       <Switch>
         <Route exact path="/" component={WatchList} />
         <Route path="/watched" component={Watched} />
         <Route path="/add" component={Add} />
-      
-        </Switch>
-      </Router>
+      </Switch>
+      <Footer/>
+        </Router>
+      </GlobalProvider>
       
  </Fragment>
     
